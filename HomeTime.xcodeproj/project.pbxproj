@@ -115,7 +115,6 @@
 				3F62BB9F22DDDAD100962AE3 /* Model */,
 				330D12641F96F40E00463505 /* AppDelegate.swift */,
 				330D12661F96F40E00463505 /* ViewController.swift */,
-				331BFAA21F973E8000E10979 /* DotNetDateConverter.swift */,
 				330D12681F96F40E00463505 /* Main.storyboard */,
 				330D126B1F96F40E00463505 /* Assets.xcassets */,
 				330D126D1F96F40E00463505 /* LaunchScreen.storyboard */,
@@ -156,6 +155,7 @@
 		3F62BBA522DDE21200962AE3 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				331BFAA21F973E8000E10979 /* DotNetDateConverter.swift */,
 				3F62BBA622DDE22200962AE3 /* JsonParsing.swift */,
 			);
 			path = Helper;
