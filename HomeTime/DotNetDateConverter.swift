@@ -21,7 +21,7 @@ class DotNetDateConverter {
   func formattedDateFromString(_ string: String) -> String {
     let date = dateFromDotNetFormattedDateString(string)
     let formatter = DateFormatter()
-    formatter.dateFormat = "HH:mm"
+    formatter.dateFormat = "HH:mm a"
     return formatter.string(from: date!)
   }
 }
