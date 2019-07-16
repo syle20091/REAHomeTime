@@ -55,6 +55,22 @@ class ViewControllerSpec: QuickSpec {
                 let southTramCell = tramsTable?.cellForRow(at: IndexPath(row: 0, section: 1))
                 expect(southTramCell?.textLabel?.text) == "14:19 pm"
             }
+            
+            it("should clear data on table after clear button was clicked") {
+                viewController?.clearTramData()
+                
+                let tramsTable = viewController?.tramTimesTable
+                
+                let north = tramsTable?.numberOfRows(inSection: 0)
+                expect(north) == 1
+                
+                let placeholderCell = tramsTable?.cellForRow(at: IndexPath(row: 0, section: 0))
+                let placeholder = placeholderCell?.textLabel?.text
+                expect(placeholder?.hasPrefix("No upcoming trams")) == true
+                
+                let south = tramsTable?.numberOfRows(inSection: 1)
+                expect(south) == 1
+            }
         }
         
     }
