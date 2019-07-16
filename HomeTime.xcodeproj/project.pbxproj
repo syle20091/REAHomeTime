@@ -109,13 +109,13 @@
 		330D12631F96F40E00463505 /* HomeTime */ = {
 			isa = PBXGroup;
 			children = (
+				3F84826C22DE0DA300556F4F /* ViewController */,
+				3F84826B22DE0D9000556F4F /* View */,
 				3F62BBAC22DDE89800962AE3 /* ViewModel */,
 				3F62BBA522DDE21200962AE3 /* Helper */,
 				3F62BBA222DDDFFB00962AE3 /* Service */,
 				3F62BB9F22DDDAD100962AE3 /* Model */,
 				330D12641F96F40E00463505 /* AppDelegate.swift */,
-				330D12661F96F40E00463505 /* ViewController.swift */,
-				330D12681F96F40E00463505 /* Main.storyboard */,
 				330D126B1F96F40E00463505 /* Assets.xcassets */,
 				330D126D1F96F40E00463505 /* LaunchScreen.storyboard */,
 				330D12701F96F40E00463505 /* Info.plist */,
@@ -167,6 +167,22 @@
 				3F62BBAD22DDE8C800962AE3 /* TramTimeTableViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3F84826B22DE0D9000556F4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				330D12681F96F40E00463505 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3F84826C22DE0DA300556F4F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				330D12661F96F40E00463505 /* ViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		415FC9D7336FAB26728B9277 /* Pods */ = {
