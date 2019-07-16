@@ -7,8 +7,8 @@ target 'HomeTime' do
   target 'HomeTimeTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'Quick', '1.2.0'
-    pod 'Nimble', '7.0.2'
+    pod 'Quick', '1.3.2'
+    pod 'Nimble', '8.0.2'
   end
 
 end
