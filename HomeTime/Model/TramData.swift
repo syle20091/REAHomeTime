@@ -12,4 +12,9 @@ struct TramData {
     var PredictedArrivalDateTime: String?
     var RouteNo: String?
     
+    init(json: JSONDictionary) {
+        Destination = json["Destination"] as? String
+        PredictedArrivalDateTime = json["PredictedArrivalDateTime"] as? String
+        RouteNo = json["RouteNo"] as? String
+    }
 }
