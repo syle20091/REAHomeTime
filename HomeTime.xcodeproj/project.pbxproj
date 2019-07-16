@@ -20,6 +20,7 @@
 		3F62BBA722DDE22200962AE3 /* JsonParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62BBA622DDE22200962AE3 /* JsonParsing.swift */; };
 		3F62BBA922DDE3E400962AE3 /* ServiceUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62BBA822DDE3E400962AE3 /* ServiceUnitTest.swift */; };
 		3F62BBAB22DDE40500962AE3 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62BBAA22DDE40500962AE3 /* MockURLSession.swift */; };
+		3F62BBAE22DDE8C800962AE3 /* TramTimeTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62BBAD22DDE8C800962AE3 /* TramTimeTableViewModel.swift */; };
 		54ED0319DC3CC3A9366207DE /* Pods_HomeTimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A07D474CE395E42F62BE85 /* Pods_HomeTimeTests.framework */; };
 		83E7869F25318958E28F6AD9 /* Pods_HomeTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2415AF054FE18CFDAC6692CD /* Pods_HomeTime.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		3F62BBA622DDE22200962AE3 /* JsonParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParsing.swift; sourceTree = "<group>"; };
 		3F62BBA822DDE3E400962AE3 /* ServiceUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceUnitTest.swift; sourceTree = "<group>"; };
 		3F62BBAA22DDE40500962AE3 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		3F62BBAD22DDE8C800962AE3 /* TramTimeTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TramTimeTableViewModel.swift; sourceTree = "<group>"; };
 		91E1605E89E74E01785D5868 /* Pods-HomeTimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeTimeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeTimeTests/Pods-HomeTimeTests.release.xcconfig"; sourceTree = "<group>"; };
 		AC3DF52AA8D0F3DFFE4C9E93 /* Pods-HomeTimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeTimeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeTimeTests/Pods-HomeTimeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0990E01D57F549B4FDF5FB8 /* Pods-HomeTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeTime/Pods-HomeTime.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		330D12631F96F40E00463505 /* HomeTime */ = {
 			isa = PBXGroup;
 			children = (
+				3F62BBAC22DDE89800962AE3 /* ViewModel */,
 				3F62BBA522DDE21200962AE3 /* Helper */,
 				3F62BBA222DDDFFB00962AE3 /* Service */,
 				3F62BB9F22DDDAD100962AE3 /* Model */,
@@ -153,6 +156,14 @@
 				3F62BBA622DDE22200962AE3 /* JsonParsing.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		3F62BBAC22DDE89800962AE3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F62BBAD22DDE8C800962AE3 /* TramTimeTableViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		415FC9D7336FAB26728B9277 /* Pods */ = {
@@ -346,6 +357,7 @@
 				3F62BBA122DDDAF400962AE3 /* TramData.swift in Sources */,
 				3F62BBA422DDE01800962AE3 /* TramDataService.swift in Sources */,
 				330D12651F96F40E00463505 /* AppDelegate.swift in Sources */,
+				3F62BBAE22DDE8C800962AE3 /* TramTimeTableViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
