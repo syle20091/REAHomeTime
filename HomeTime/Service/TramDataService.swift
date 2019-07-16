@@ -19,6 +19,13 @@ class TramDataService {
         jsonParsing = JsonParsing()
     }
     
+    //DI init for testing
+    init(session: URLSession, token: String? = nil) {
+        self.session = session
+        self.token = token
+        jsonParsing = JsonParsing()
+    }
+    
     /// This function returns a *token* string if token already fetched otherwise fetch a new one within a completion handler.
     ///
     /// - Parameter completion: The completion handler to call when the load request is complete
