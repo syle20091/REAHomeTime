@@ -100,6 +100,16 @@ class TramTimeTableViewModel {
         return arrivalDateString
     }
     
+    /// This function takes section interger and return text for the Destination of the tram.
+    /// - Parameter section: section of indexPath
+    /// - returns: Destination text
+    func getDestinationWith(section: Int) -> String? {
+        guard let trams = tramsFor(section: section), let destination = trams.first?.Destination else {
+            return nil
+        }
+        return destination
+    }
+    
     func ConvertTime(date: String?) -> String? {
         let dateConverter = DotNetDateConverter()
         

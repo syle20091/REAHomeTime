@@ -96,6 +96,9 @@ extension ViewController {
   }
 
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return section == 0 ? "North To North Richmond" : "South To Balaclava"
+    guard let destination = viewModel.getDestinationWith(section: section) else {
+        return section == 0 ? "North" : "South"
+    }
+    return section == 0 ? "North To \(destination)" : "South To \(destination)"
   }
 }

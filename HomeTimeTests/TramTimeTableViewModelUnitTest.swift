@@ -50,5 +50,16 @@ class TramTimeTableViewModelUnitTest: XCTestCase {
             }
         }
     }
+    
+    func testGetDestinationWith(){
+        viewModel.loadTramDataUsing(stopId: "4055") { (error) in
+            if error != nil {
+                XCTFail()
+            }else{
+                let label = self.viewModel.getDestinationWith(section: 0)
+                XCTAssert(label == "melbourne")
+            }
+        }
+    }
 }
 
