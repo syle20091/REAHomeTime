@@ -29,6 +29,7 @@ extension TimeInterval {
         return Int(self) / 3600
     }
     
+    /// Get time interval in hours & mins
     var timeIntervelInstring: String {
         if hours != 0 {
             return "\(hours)h \(minutes)m"
@@ -41,7 +42,7 @@ extension TimeInterval {
 }
 
 extension UIView {
-    
+    ///Call this function before show error banner
     func setUpErrorBanner() {
         let bounds = UIScreen.main.bounds
         let label = UILabel(frame: CGRect(x: 0, y: bounds.height - 48, width: bounds.width, height: 48))
@@ -54,7 +55,11 @@ extension UIView {
         label.tag = 89999
         self.addSubview(label)
     }
-    
+    ß
+    ///Call this to show error banner
+    ///- Warning: Call setUpErrorBanner() before call this function
+    /// - Parameter show: bool to determine show or hide the banner
+    /// - Parameter error: error for display
     func errorBanner(show: Bool, error: Error? = nil) {
         guard let label = self.viewWithTag(89999) as? UILabel else {
             return

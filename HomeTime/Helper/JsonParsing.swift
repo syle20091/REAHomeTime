@@ -12,6 +12,7 @@ class JsonParsing {
         
     }
     
+    ///This function take array of JSONDictionary and parse it to array of TramData
     func parsing(tramData tramDataInput: [JSONDictionary]?) -> [TramData]? {
         guard let tramDataInput = tramDataInput else {
             return nil

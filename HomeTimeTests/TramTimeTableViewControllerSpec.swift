@@ -9,10 +9,10 @@ import Nimble
 
 // MARK: -
 
-class TramTimeTableViewController: QuickSpec {
+class ViewControllerSpec: QuickSpec {
     
     override func spec() {
-        describe("TramTimeTableViewController") {
+        describe("ViewController") {
             var viewController: TramTimeTableViewController?
             
             beforeEach {
