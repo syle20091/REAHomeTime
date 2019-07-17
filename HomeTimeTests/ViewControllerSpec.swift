@@ -13,11 +13,11 @@ class ViewControllerSpec: QuickSpec {
     
     override func spec() {
         describe("ViewController") {
-            var viewController: ViewController?
+            var viewController: TramTimeTableViewController?
             
             beforeEach {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                viewController = storyboard.instantiateViewController(withIdentifier: "viewController") as? ViewController
+                viewController = storyboard.instantiateViewController(withIdentifier: "TramTimeTableViewController") as? TramTimeTableViewController
                 _ = viewController?.view // .view // load it up
             }
             

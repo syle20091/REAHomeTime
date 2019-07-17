@@ -1,55 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JOt-M1-OY9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JOt-M1-OY9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home Time Trams-->
-        <scene sceneID="RP6-T8-uJh">
+        <!--Tram Time Table View Controller-->
+        <scene sceneID="M12-gi-IBf">
             <objects>
-                <tableViewController storyboardIdentifier="viewController" id="4vi-as-vbC" userLabel="Home Time Trams" customClass="ViewController" customModule="HomeTime" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="t5X-F6-lSi">
+                <viewController storyboardIdentifier="TramTimeTableViewController" id="iuu-dn-Tb1" customClass="TramTimeTableViewController" customModule="HomeTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ZY-i2-6KW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TramCellIdentifier" id="dUl-2Y-d8G">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dUl-2Y-d8G" id="iHI-62-9yk">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="4vi-as-vbC" id="pn0-bP-NXO"/>
-                            <outlet property="delegate" destination="4vi-as-vbC" id="KZ2-kZ-IQp"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Home Time Trams" id="yhc-J6-F0d">
-                        <barButtonItem key="leftBarButtonItem" title="Clear" id="0W1-3c-a2P" userLabel="Clear">
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dyP-Up-eEG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TramCellIdentifier" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TramCellIdentifier" id="Yb8-iM-rR4">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yb8-iM-rR4" id="FxE-T9-tY8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iuu-dn-Tb1" id="X23-08-UE3"/>
+                                    <outlet property="delegate" destination="iuu-dn-Tb1" id="deE-Q5-EoT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qeX-8q-UAR" firstAttribute="trailing" secondItem="dyP-Up-eEG" secondAttribute="trailing" id="6l2-fs-dDc"/>
+                            <constraint firstItem="qeX-8q-UAR" firstAttribute="bottom" secondItem="dyP-Up-eEG" secondAttribute="bottom" id="6to-dq-pa0"/>
+                            <constraint firstItem="dyP-Up-eEG" firstAttribute="top" secondItem="qeX-8q-UAR" secondAttribute="top" id="er0-ri-IAq"/>
+                            <constraint firstItem="dyP-Up-eEG" firstAttribute="leading" secondItem="qeX-8q-UAR" secondAttribute="leading" id="jd0-ew-DU7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qeX-8q-UAR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KqS-su-l8z">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="x0J-I7-7gJ">
                             <connections>
-                                <action selector="clearButtonTapped:" destination="4vi-as-vbC" id="RJ5-H7-n9f"/>
+                                <action selector="clearButtonTapped:" destination="iuu-dn-Tb1" id="UhI-1D-x8T"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Load" id="ucg-Ki-scM">
+                        <barButtonItem key="rightBarButtonItem" title="Load" id="RKt-Mm-cJu">
                             <connections>
-                                <action selector="loadButtonTapped:" destination="4vi-as-vbC" id="V4M-8F-1Hb"/>
+                                <action selector="loadButtonTapped:" destination="iuu-dn-Tb1" id="pP8-SX-WrF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tramTimesTable" destination="t5X-F6-lSi" id="t68-0b-SX0"/>
+                        <outlet property="tramTimesTable" destination="dyP-Up-eEG" id="7XS-3g-a5A"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kvX-18-Eut" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AYS-tt-Mir" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="654" y="-102"/>
+            <point key="canvasLocation" x="745" y="-102"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c0t-h5-784">
@@ -60,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="4vi-as-vbC" kind="relationship" relationship="rootViewController" id="gWe-l5-dOy"/>
+                        <segue destination="iuu-dn-Tb1" kind="relationship" relationship="rootViewController" id="b8l-nq-Ol9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0x-YF-4Ge" userLabel="First Responder" sceneMemberID="firstResponder"/>

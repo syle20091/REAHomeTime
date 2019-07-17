@@ -18,3 +18,5 @@ struct TramData {
         RouteNo = json["RouteNo"] as? String
     }
 }
+
+typealias JSONDictionary = [String: Any]
