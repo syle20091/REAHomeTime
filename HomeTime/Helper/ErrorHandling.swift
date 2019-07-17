@@ -11,3 +11,12 @@ import Foundation
 enum JSONError: Error {
     case serialization
 }
+
+extension JSONError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .serialization:
+            return NSLocalizedString("Serialization error", comment: "")
+        }
+    }
+}
