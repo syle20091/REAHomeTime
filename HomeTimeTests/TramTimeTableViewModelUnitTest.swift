@@ -2,7 +2,6 @@
 //  TramTimeTableViewModelUnitTest.swift
 //  HomeTimeTests
 //
-//  Created by syle on 16/7/19.
 //  Copyright © 2019 REA. All rights reserved.
 //
 
@@ -40,13 +39,28 @@ class TramTimeTableViewModelUnitTest: XCTestCase {
         self.wait(for: [exceptation], timeout: 10.0)
     }
     
-    func testGetTextLabel(){
+    func testGetTramArrivedText(){
         viewModel.loadTramDataUsing(stopId: "4055") { (error) in
             if error != nil {
                 XCTFail()
             }else{
-                let label = self.viewModel.getTextLabel(section: 0, row: 0)
-                XCTAssert(label == "14:19 pm")
+                let label = self.viewModel.getTramArrivedText(section: 0, row: 0)
+                XCTAssert(label == "02:19 pm")
+            }
+        }
+    }
+    
+    func testGetTimeInterval(){
+        viewModel.loadTramDataUsing(stopId: "4055") { (error) in
+            if error != nil {
+                XCTFail()
+            }else{
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy/MM/dd HH:mm"
+                let testDate = formatter.date(from: "2015/03/20 15:21")
+                
+                let label = self.viewModel.getTimeInterval(section: 0, row: 0, currentDate: testDate!)
+                XCTAssert(label == "( 1h 1m )")
             }
         }
     }
@@ -62,4 +76,3 @@ class TramTimeTableViewModelUnitTest: XCTestCase {
         }
     }
 }
-

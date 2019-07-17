@@ -81,7 +81,7 @@ class TramTimeTableViewModel {
     /// - Parameter section: section of indexPath
     /// - Parameter row: row of indexPath
     /// - returns: textLabel
-    func getTextLabel(section: Int, row: Int) -> String? {
+    func getTramArrivedText(section: Int, row: Int) -> String? {
         let trams = tramsFor(section: section)
         let tram = trams?[row]
         
@@ -93,14 +93,14 @@ class TramTimeTableViewModel {
             }
         }
         
-        guard let arrivalDateString = ConvertTime(date: tram?.PredictedArrivalDateTime) else {
+        guard let arrivalDateString = ConvertTime(tramArrivedDate: tram?.PredictedArrivalDateTime) else {
             return nil
         }
         
         return arrivalDateString
     }
     
-    /// This function takes section interger and return text for the Destination of the tram.
+    /// This function takes section interger and return time table for the Destination of the tram.
     /// - Parameter section: section of indexPath
     /// - returns: Destination text
     func getDestinationWith(section: Int) -> String? {
@@ -110,11 +110,28 @@ class TramTimeTableViewModel {
         return destination
     }
     
-    func ConvertTime(date: String?) -> String? {
+    /// This function takes section and row interger and return time interval between now and tram arrived time by string.
+    /// - Parameter section: section of indexPath
+    /// - Parameter row: row of indexPath
+    /// - Parameter currentDate: date to compare default is current date
+    /// - returns:  time interval between now and tram arrived time
+    func getTimeInterval(section: Int, row: Int, currentDate: Date = Date()) -> String {
+        
+        let dateConverter = DotNetDateConverter()
+        let trams = tramsFor(section: section)
+        
+        if let tramArrivedDate = trams?[row].PredictedArrivalDateTime, let tramDate = dateConverter.dateFromDotNetFormattedDateString(tramArrivedDate) {
+            return "( \(currentDate.calculateTimeDifference(date: tramDate).timeIntervelInstring) )"
+        }
+        
+        return ""
+    }
+    
+    func ConvertTime(tramArrivedDate: String?) -> String? {
         let dateConverter = DotNetDateConverter()
         
-        if let arrivalDateString = date {
-            return dateConverter.formattedDateFromString(arrivalDateString).lowercased()
+        if let tramArrivedDate = tramArrivedDate {
+            return dateConverter.formattedDateFromString(tramArrivedDate).lowercased()
         }
         
         return nil

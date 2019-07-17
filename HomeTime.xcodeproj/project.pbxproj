@@ -23,6 +23,9 @@
 		3F84826A22DDFCB900556F4F /* TramTimeTableViewModelUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F84826922DDFCB900556F4F /* TramTimeTableViewModelUnitTest.swift */; };
 		3F84826E22DF100E00556F4F /* TramTimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F84826D22DF100E00556F4F /* TramTimeTableViewController.swift */; };
 		3F84827022DF129000556F4F /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F84826F22DF129000556F4F /* ErrorHandling.swift */; };
+		3F84827222DF201D00556F4F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F84827122DF201D00556F4F /* Extensions.swift */; };
+		3F84827522DF263F00556F4F /* TramTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F84827322DF263F00556F4F /* TramTimeTableViewCell.swift */; };
+		3F84827622DF263F00556F4F /* TramTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F84827422DF263F00556F4F /* TramTimeTableViewCell.xib */; };
 		54ED0319DC3CC3A9366207DE /* Pods_HomeTimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A07D474CE395E42F62BE85 /* Pods_HomeTimeTests.framework */; };
 		83E7869F25318958E28F6AD9 /* Pods_HomeTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2415AF054FE18CFDAC6692CD /* Pods_HomeTime.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +64,9 @@
 		3F84826922DDFCB900556F4F /* TramTimeTableViewModelUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TramTimeTableViewModelUnitTest.swift; sourceTree = "<group>"; };
 		3F84826D22DF100E00556F4F /* TramTimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TramTimeTableViewController.swift; sourceTree = "<group>"; };
 		3F84826F22DF129000556F4F /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		3F84827122DF201D00556F4F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3F84827322DF263F00556F4F /* TramTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TramTimeTableViewCell.swift; sourceTree = "<group>"; };
+		3F84827422DF263F00556F4F /* TramTimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TramTimeTableViewCell.xib; sourceTree = "<group>"; };
 		91E1605E89E74E01785D5868 /* Pods-HomeTimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeTimeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeTimeTests/Pods-HomeTimeTests.release.xcconfig"; sourceTree = "<group>"; };
 		AC3DF52AA8D0F3DFFE4C9E93 /* Pods-HomeTimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeTimeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeTimeTests/Pods-HomeTimeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0990E01D57F549B4FDF5FB8 /* Pods-HomeTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeTime/Pods-HomeTime.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +166,7 @@
 				331BFAA21F973E8000E10979 /* DotNetDateConverter.swift */,
 				3F62BBA622DDE22200962AE3 /* JsonParsing.swift */,
 				3F84826F22DF129000556F4F /* ErrorHandling.swift */,
+				3F84827122DF201D00556F4F /* Extensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -176,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				330D12681F96F40E00463505 /* Main.storyboard */,
+				3F84827322DF263F00556F4F /* TramTimeTableViewCell.swift */,
+				3F84827422DF263F00556F4F /* TramTimeTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -294,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F84827622DF263F00556F4F /* TramTimeTableViewCell.xib in Resources */,
 				330D126F1F96F40E00463505 /* LaunchScreen.storyboard in Resources */,
 				330D126C1F96F40E00463505 /* Assets.xcassets in Resources */,
 				330D126A1F96F40E00463505 /* Main.storyboard in Resources */,
@@ -374,12 +384,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F62BBA722DDE22200962AE3 /* JsonParsing.swift in Sources */,
+				3F84827222DF201D00556F4F /* Extensions.swift in Sources */,
 				3F84826E22DF100E00556F4F /* TramTimeTableViewController.swift in Sources */,
 				331BFAA31F973E8000E10979 /* DotNetDateConverter.swift in Sources */,
 				3F62BBA122DDDAF400962AE3 /* TramData.swift in Sources */,
 				3F62BBA422DDE01800962AE3 /* TramDataService.swift in Sources */,
 				3F84827022DF129000556F4F /* ErrorHandling.swift in Sources */,
 				330D12651F96F40E00463505 /* AppDelegate.swift in Sources */,
+				3F84827522DF263F00556F4F /* TramTimeTableViewCell.swift in Sources */,
 				3F62BBAE22DDE8C800962AE3 /* TramTimeTableViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,6 +19,7 @@ class TramTimeTableViewController: UIViewController {
         let tramDataService = TramDataService()
         viewModel = TramTimeTableViewModel(tramDataService: tramDataService)
         clearTramData()
+        tramTimesTable.register(UINib(nibName: "TramTimeTableViewCell", bundle: nil), forCellReuseIdentifier: "TramCellIdentifier")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,12 +70,13 @@ extension TramTimeTableViewController {
 
 extension TramTimeTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TramCellIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TramCellIdentifier", for: indexPath) as! TramTimeTableViewCell
         
-        guard let text = viewModel.getTextLabel(section: indexPath.section, row: indexPath.row) else {
+        guard let timeText = viewModel.getTramArrivedText(section: indexPath.section, row: indexPath.row) else {
             return cell
         }
-        cell.textLabel?.text = text
+        cell.timeLabel?.text = timeText
+        cell.timeIntervalLabel?.text = viewModel.getTimeInterval(section: indexPath.section, row: indexPath.row)
         
         return cell;
     }
@@ -102,4 +104,5 @@ extension TramTimeTableViewController: UITableViewDataSource {
         }
         return section == 0 ? "North To \(destination)" : "South To \(destination)"
     }
+    
 }
