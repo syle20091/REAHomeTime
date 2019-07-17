@@ -14,6 +14,8 @@ Xcode version: 10.2.1
 * Adding different extensions for future potential usage (e.g. error banner in UIView extension)
 * Adding unit tests to test most of the method in viewModel and service
 * Modified and included more behavior-driven-test
+* Using Mock session data to test API
+* New features including: showing destination, time to wait and showing banner when error occurred 
 
 
 
