@@ -55,7 +55,7 @@ extension UIView {
         label.tag = 89999
         self.addSubview(label)
     }
-    ß
+    
     ///Call this to show error banner
     ///- Warning: Call setUpErrorBanner() before call this function
     /// - Parameter show: bool to determine show or hide the banner

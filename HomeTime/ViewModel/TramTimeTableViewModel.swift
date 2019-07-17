@@ -8,6 +8,7 @@
 import Foundation
 
 class TramTimeTableViewModel {
+    
     private var northTrams: [TramData]?
     private var southTrams: [TramData]?
     public private(set) var loadingNorth: Bool = false
@@ -56,15 +57,15 @@ class TramTimeTableViewModel {
         loadingSouth = false
     }
     
-    func stopLoadingHorth() {
+    private func stopLoadingHorth() {
         loadingNorth = false
     }
     
-    func stopLoadingSouth() {
+    private func stopLoadingSouth() {
         loadingSouth = false
     }
     
-    func startLoading() {
+    private func startLoading() {
         loadingNorth = true
         loadingSouth = true
     }
@@ -92,12 +93,12 @@ class TramTimeTableViewModel {
                 return "No upcoming trams. Tap load to fetch"
             }
         }
-        
-        guard let arrivalDateString = ConvertTime(tramArrivedDate: tram?.PredictedArrivalDateTime) else {
+        let dateConverter = DotNetDateConverter()
+        guard let arrivalDateString = tram?.PredictedArrivalDateTime else {
             return nil
         }
         
-        return arrivalDateString
+        return dateConverter.formattedDateFromString(arrivalDateString).lowercased()
     }
     
     /// This function takes section interger and return time table for the Destination of the tram.
@@ -114,7 +115,7 @@ class TramTimeTableViewModel {
     /// - Parameter section: section of indexPath
     /// - Parameter row: row of indexPath
     /// - Parameter currentDate: date to compare default is current date
-    /// - returns:  time interval between now and tram arrived time
+    /// - returns: time interval between now and tram arrived time
     func getTimeInterval(section: Int, row: Int, currentDate: Date = Date()) -> String {
         
         let dateConverter = DotNetDateConverter()
@@ -126,15 +127,4 @@ class TramTimeTableViewModel {
         
         return ""
     }
-    
-    func ConvertTime(tramArrivedDate: String?) -> String? {
-        let dateConverter = DotNetDateConverter()
-        
-        if let tramArrivedDate = tramArrivedDate {
-            return dateConverter.formattedDateFromString(tramArrivedDate).lowercased()
-        }
-        
-        return nil
-    }
-    
 }
