@@ -16,14 +16,15 @@ class TramTimeTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tramDataService = TramDataService()
-        viewModel = TramTimeTableViewModel(tramDataService: tramDataService)
+        setUp()
         clearTramData()
-        tramTimesTable.register(UINib(nibName: "TramTimeTableViewCell", bundle: nil), forCellReuseIdentifier: "TramCellIdentifier")
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
+    func setUp() {
+        let tramDataService = TramDataService()
+        viewModel = TramTimeTableViewModel(tramDataService: tramDataService)
+        tramTimesTable.register(UINib(nibName: "TramTimeTableViewCell", bundle: nil), forCellReuseIdentifier: "TramCellIdentifier")
+        self.view?.setUpErrorBanner()
     }
     
     @IBAction func clearButtonTapped(_ sender: UIBarButtonItem) {
@@ -44,22 +45,27 @@ extension TramTimeTableViewController {
     func clearTramData() {
         viewModel.clearTramData()
         tramTimesTable.reloadData()
+        self.view.errorBanner(show: false)
     }
     
     func loadTramData() {
         viewModel.loadTramDataUsing(stopId: "4055") {[weak self] (error) in
             if let error = error{
                 print("Error retrieving trams: \(String(describing: error))")
+                self?.view.errorBanner(show: true, error: error)
             }else{
                 self?.tramTimesTable.reloadData()
+                self?.view.errorBanner(show: false)
             }
         }
         
         viewModel.loadTramDataUsing(stopId: "4155") {[weak self] (error) in
             if let error = error{
                 print("Error retrieving trams: \(String(describing: error))")
+                self?.view.errorBanner(show: true, error: error)
             }else{
                 self?.tramTimesTable.reloadData()
+                self?.view.errorBanner(show: false)
             }
         }
     }

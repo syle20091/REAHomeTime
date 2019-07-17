@@ -134,11 +134,11 @@
 		330D12781F96F40E00463505 /* HomeTimeTests */ = {
 			isa = PBXGroup;
 			children = (
+				3F84827722DF476E00556F4F /* MockData */,
 				3364EC871F98236E00161053 /* DateFormatterTest.swift */,
 				33070CE81F987F6D003CC41D /* ViewControllerSpec.swift */,
 				330D127B1F96F40E00463505 /* Info.plist */,
 				3F62BBA822DDE3E400962AE3 /* ServiceUnitTest.swift */,
-				3F62BBAA22DDE40500962AE3 /* MockURLSession.swift */,
 				3F84826922DDFCB900556F4F /* TramTimeTableViewModelUnitTest.swift */,
 			);
 			path = HomeTimeTests;
@@ -195,6 +195,14 @@
 				3F84826D22DF100E00556F4F /* TramTimeTableViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3F84827722DF476E00556F4F /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				3F62BBAA22DDE40500962AE3 /* MockURLSession.swift */,
+			);
+			path = MockData;
 			sourceTree = "<group>";
 		};
 		415FC9D7336FAB26728B9277 /* Pods */ = {

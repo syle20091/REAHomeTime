@@ -57,4 +57,21 @@ class MockTramDataSession: URLSession {
     }
 }
 
+//Mock fail session to test
+class MockFailSession: URLSession {
+    override func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+        
+        let jsonString =  """
+{
+"FailresponseObject" :
+  
+}
+"""
+        let data = jsonString.data(using: .utf8)!
+        completionHandler(data, nil, nil)
+        
+        return MockURLSessionDataTask()
+    }
+}
+
 

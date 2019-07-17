@@ -71,6 +71,28 @@ class ViewControllerSpec: QuickSpec {
                 let south = tramsTable?.numberOfRows(inSection: 1)
                 expect(south) == 1
             }
+            
+            it("should display errorBanner when loading with wrong session data") {
+                let mock = MockFailSession()
+                let serviceTramData = TramDataService(session: mock, token: "token")
+                
+                viewController?.viewModel = TramTimeTableViewModel(tramDataService: serviceTramData)
+                viewController?.loadTramData()
+                
+                let label = viewController?.view.viewWithTag(89999) as! UILabel
+
+                expect(label.alpha) == 1
+            }
+            
+            it("should dismiss errorBanner when clear was clicked") {
+                
+                viewController?.clearTramData()
+                
+                let label = viewController?.view.viewWithTag(89999) as! UILabel
+                
+                expect(label.alpha) == 0
+            }
+            
         }
         
     }
