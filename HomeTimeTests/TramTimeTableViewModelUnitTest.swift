@@ -31,7 +31,7 @@ class TramTimeTableViewModelUnitTest: XCTestCase {
             if error != nil {
                 XCTFail()
             }else{
-                XCTAssert(self.viewModel.northTrams?.count == 1)
+                XCTAssert(self.viewModel.getNorthTramsCount() == 1)
             }
             
             exceptation.fulfill()

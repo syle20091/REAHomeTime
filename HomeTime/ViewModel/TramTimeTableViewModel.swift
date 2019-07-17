@@ -8,10 +8,10 @@
 import Foundation
 
 class TramTimeTableViewModel {
-    var northTrams: [TramData]?
-    var southTrams: [TramData]?
-    var loadingNorth: Bool = false
-    var loadingSouth: Bool = false
+    private var northTrams: [TramData]?
+    private var southTrams: [TramData]?
+    public private(set) var loadingNorth: Bool = false
+    public private(set) var loadingSouth: Bool = false
     
     var tramDataService: TramDataService!
     
@@ -19,6 +19,10 @@ class TramTimeTableViewModel {
         self.tramDataService = tramDataService
     }
     
+    /// This function takes tram stopId and will try to load the tram timetable data.
+    /// - Parameter stopId: stopId
+    /// - Parameter completion: The completion handler to call when the load request is complete
+    /// - Parameter error: possible error
     func loadTramDataUsing(stopId: String,completion: @escaping (_ error: Error?) -> Void) {
         startLoading()
         tramDataService.loadTramDataUsing(stopId: stopId) {[weak self] (trams, error) in
@@ -35,6 +39,14 @@ class TramTimeTableViewModel {
                 completion(nil)
             }
         }
+    }
+    /// Get the sum NorthTrams time table
+    func getNorthTramsCount() -> Int? {
+        return northTrams?.count
+    }
+    /// Get the sum SouthTrams time table
+    func getSouthTramsCount() -> Int? {
+        return southTrams?.count
     }
     
     func clearTramData() {
@@ -65,6 +77,10 @@ class TramTimeTableViewModel {
         return (section == 0) ? loadingNorth : loadingSouth
     }
     
+    /// This function takes section and row interger and return text for each row of the table view.
+    /// - Parameter section: section of indexPath
+    /// - Parameter row: row of indexPath
+    /// - returns: textLabel
     func getTextLabel(section: Int, row: Int) -> String? {
         let trams = tramsFor(section: section)
         let tram = trams?[row]

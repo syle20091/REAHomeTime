@@ -85,12 +85,12 @@ extension ViewController {
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if (section == 0)
     {
-      guard let count = viewModel.northTrams?.count else { return 1 }
+      guard let count = viewModel.getNorthTramsCount() else { return 1 }
       return count
     }
     else
     {
-      guard let count = viewModel.southTrams?.count else { return 1 }
+      guard let count = viewModel.getSouthTramsCount() else { return 1 }
       return count
     }
   }
